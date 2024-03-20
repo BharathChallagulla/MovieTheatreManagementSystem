@@ -1,7 +1,3 @@
-Creating a README file for a SQL project is essential for providing information about the project, its purpose, how to use it, and any other relevant details. Here is a sample template for a README file for a SQL project:
-
----
-
 # Movie Theatre Management System
 
 ## Description
