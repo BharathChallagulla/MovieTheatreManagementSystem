@@ -12,11 +12,9 @@ This project is about creating SQL dabase for a chain of movie theatres
 - [Usage](#usage)
 - [Database Schema](#database-schema)
 - [Queries](#queries)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/yourusername/project.git`
+1. Clone the repository: `git clone https://github.com/BharathChallagulla/MovieTheatreManagementSystem.git`
 2. Install any required dependencies.
 3. Set up the database by running the SQL script provided.
 
@@ -30,28 +28,40 @@ Provide an overview of the database schema, including tables, relationships, and
 
 ### Example:
 ```
-Table Name: users
-Columns: user_id (Primary Key), username, email
+Table Name: Theatre
+Columns: TheatreID, TheatreName, Location, Technology
 
-Table Name: orders
-Columns: order_id (Primary Key), user_id (Foreign Key), order_date, total_amount
+Table Name: Employee
+Columns: EmployeeID, Fname, Lname, Role, Salary, EmployeeStartDate, EmployeeEndDate, TheatreID
+
+Table Name: Movies
+Columns: MovieID, MovieName, Language, Genre, Rating, Duration, TheatreID, ScreeningID
+
+Table Name: Payments
+Columns: PaymentID, PaymentType, PaymentDate, PaymentTime, PaymentStatus
+
+Table Name: Screenings
+Columns: ScreeningID, MovieID, ShowID
+
+Table Name: seats
+Columns: atID, SeatType, RowNo, SeatNumber
+
+Table Name: Shows
+Columns: ShowID, StartTime, EndTime, ScreeningID, Date
+
+Table Name: Tickets
+Columns: TicketID, ShowID, BookedDate, SeatID, PaymentID, CustomerName
 ```
 
 ## Queries
-Include sample SQL queries that demonstrate how to retrieve, insert, update, or delete data from the database.
+Includes sample SQL queries that demonstrate how to retrieve, insert, update, or delete data from the database.
 
 ### Example:
 ```sql
--- Retrieve all users
-SELECT * FROM users;
+-- Retrieve all Theatre
+SELECT * FROM Theatre;
 
--- Insert a new order
-INSERT INTO orders (user_id, order_date, total_amount) VALUES (1, '2024-03-20', 50.00);
+-- Insert a new Theatre
+INSERT INTO Theatre (TheatreID, TheatreName, Location, Technology) VALUES
+('ABC123456A', 'PVR Cinemas', 'Delhi', 'IMAX');
 ```
-
-## License
-This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-By following this template and customizing it with specific details about your SQL project, you can create a comprehensive README file that helps users understand and interact with your database project effectively.
